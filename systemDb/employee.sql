@@ -16,7 +16,7 @@ VALUES (102, '이길동', 31, 30); --부서코드가 없어서 외래키 제약조건 위배
 INSERT INTO employee(empid, empname, deptid)
 VALUES (103, '나길동', 20);
 INSERT INTO employee(empid, empname, age, deptid)
-VALUES (104, '정길동', 45, 20);
+VALUES (104, '정이길동', 45, 20);
 
 --사원의 모든 정보 출력
 SELECT * FROM employee;
@@ -35,6 +35,10 @@ WHERE age > 30;
 --나이가 없는 
 SELECT * FROM employee
 WHERE age is null;
+
+--문자열 검색(사원명에서 '이'를 포함하거나 ^또는^ 나이가 지정되지 않은 사원 검색)
+SELECT * FROM employee
+WHERE empname LIKE '%이%' OR age is null; -- %% : 포함돼 있다.(퍼센트임)
 
 --부서번호가 20인 사원 검색
 SELECT * FROM emplotee
