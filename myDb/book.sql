@@ -26,12 +26,36 @@ SELECT bookname, price FROM book;
 
 --도서 테이블에 있는 모든 출판사 출력(중복 제거)
 --DISTINCT는 중복이 없는 유일한 데이터를 출력
-SELECT publisher FROM book;
+SELECT DISTINCT publisher FROM book;
+
+--출판사가 '굿스포츠' 또는 '대한미디어'인 도서 검색
+SELECT * FROM book
+WHERE publisher = '굿스포츠' OR publisher = '대한미디어';
+
+--출판사가 '굿스포츠' 또는 '대한미디어'인 도서 출력
+--IN() 함수 사용
+SELECT * FROM book
+WHERE publisher IN('굿스포츠', '대한미디어');
+
+--출판사가 '굿스포츠' 또는 '대한미디어'가 아닌 도서 출력
+--NOT IN() 함수 사용
+SELECT * FROM book
+WHERE publisher NOT IN('굿스포츠', '대한미디어');
 
 --가격이 20000원 미만인 도서 출력(오름차순)
 SELECT * FROM book
 WHERE price < 20000
 ORDER BY price DESC;
+
+--가격이 13000원인 도서 출력
+SELECT * FROM book
+WHERE price = 13000
+ORDER BY publisher;
+
+--가격이 13000원이 아닌 도서 출력
+SELECT * FROM book
+WHERE price != 13000
+ORDER BY publisher;
 
 --가격 10000원 이상 20000원 이하인 도서 출력
 --BETWEEN A AND B
@@ -45,6 +69,10 @@ WHERE bookname LIKE '축구의 역사';   --LIKE 대신 =도 가능
 --도서명에 '축구'가 포함(%%)된 출판사 검색
 SELECT publisher FROM book
 WHERE bookname LIKE '%축구%';
+
+--도서명에 '축구'가 포함(%%)되지 않은 출판사 검색
+SELECT publisher FROM book
+WHERE bookname NOT LIKE '%축구%';
 
 --축구 관련 도서 중 가격이 20000원 이상인 도서를 출력
 SELECT * FROM book
