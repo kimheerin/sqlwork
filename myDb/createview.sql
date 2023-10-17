@@ -18,3 +18,14 @@ UPDATE vw_customer
 --참조하고 있는 order 테이블이 존재하여 삭제 불가
 DELETE FROM vw_customer
 WHERE custid = 3;
+
+--고객과 관련 주문 정보 검색
+SELECT cs.name, bk.bookname, od.saleprice
+FROM book bk, customer cs, orders od
+WHERE bk.bookid = od.bookid
+  AND cs.custid = od.custid;
+  
+SELECT * FROM vw_book_orders;
+
+SELECT COUNT(*)
+FROM vw_book_orders;

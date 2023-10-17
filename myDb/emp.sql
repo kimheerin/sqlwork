@@ -64,3 +64,15 @@ SELECT ename 사원이름,
        ROUND(salary/30, 0) 결과2,
        ROUND(salary/30, -1) 결과3
 FROM emp;
+
+drop table emp;
+
+SELECT * FROM emp;
+
+--급여가 가장 많은 사원과 가장 적은 사원 검색(OR)
+--MAX(SALARY)
+--서브쿼리(subquery)
+SELECT ename, salary
+FROM emp
+WHERE salary = (SELECT MAX(salary) FROM emp)
+OR    salary = (SELECT MIN(salary) FROM emp);

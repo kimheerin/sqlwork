@@ -4,6 +4,7 @@
 
 --고객(customer)과 고객의 주문(order)에 관한 데이터를 모두 검색
 --고객이름으로 정렬(자동 그룹화)
+--카테시안곱 : customer(6) x order(10) = 60
 SELECT cus.name, ord.saleprice
 FROM customer cus, orders ord
 WHERE cus.custid = ord.custid

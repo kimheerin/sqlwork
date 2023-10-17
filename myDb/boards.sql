@@ -26,3 +26,14 @@ SELECT * FROM boards
 WHERE bwriter = 'choieunho123'
 ORDER BY bno DESC;
 
+--글번호 5번의 제목을 '아이폰5변경'으로 변경
+UPDATE boards
+SET btitle = '아이폰5변경',
+    bcontent = '변경됐나'
+    WHERE bno = 5;
+    
+SELECT * FROM boards;
+
+--3번 게시글 삭제
+DELETE FROM boards
+WHERE bno = 3;
