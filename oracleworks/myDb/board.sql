@@ -17,3 +17,6 @@ SELECT * FROM board
 ORDER BY bno DESC;
 
 COMMIT;
+
+drop sequence seq;
+truncate table board;
