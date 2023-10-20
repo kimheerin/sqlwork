@@ -1,7 +1,6 @@
 --서브 쿼리(sub Query) : 부속질의 (중첩 커리)
 --select 내부에 또 SELECT 검색 가능
 
-
 --최고가 도서 출력
 --MAX(price)
 SELECT MAX(price) FROM BOOK;
