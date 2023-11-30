@@ -21,3 +21,11 @@ SELECT * FROM member;
 --데이터 삭제(순서대로)
 TRUNCATE TABLE member;
 DROP SEQUENCE seq_mno;
+
+--계정이 'khit'인 회원의 정보 보기
+SELECT * FROM member
+WHERE id = "khit";
+
+--계정과 암호가 일치한 회원 찾기
+SELECT * FROM member
+WHERE id = "khit" AND passwd ="m1234567";
